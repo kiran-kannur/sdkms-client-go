@@ -76,6 +76,7 @@ type ListSobjectsParams struct {
 	Limit   *uint       `json:"limit,omitempty"`
 	Offset  *uint       `json:"offset,omitempty"`
 	Sort    SobjectSort `json:"sort"`
+    FilterByText *string `json:"filter"`
 }
 
 func (x ListSobjectsParams) urlEncode(v map[string][]string) error {
@@ -94,6 +95,9 @@ func (x ListSobjectsParams) urlEncode(v map[string][]string) error {
 	if x.Offset != nil {
 		v["offset"] = []string{fmt.Sprintf("%v", *x.Offset)}
 	}
+    if x.FilterByText != nil {
+        v["filter"] = []string{fmt.Sprintf("{\"name\":{\"$text\":{\"$search\": \"%v\"}}}", *x.FilterByText)}
+    }
 	if err := x.Sort.urlEncode(v); err != nil {
 		return err
 	}
@@ -223,7 +227,9 @@ func (c *Client) ListSobjects(ctx context.Context, queryParameters *ListSobjects
 			return nil, err
 		}
 		u = fmt.Sprintf("%v?%v", u, q)
+		fmt.Printf("%v\n", u)
 	}
+    // return nil, nil
 	var r []Sobject
 	if err := c.fetch(ctx, http.MethodGet, u, nil, &r); err != nil {
 		return nil, err
