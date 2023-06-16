@@ -34,6 +34,7 @@ func (x ReviewerPrincipal) MarshalJSON() ([]byte, error) {
 	obj.User = x.User
 	return json.Marshal(obj)
 }
+
 func (x *ReviewerPrincipal) UnmarshalJSON(data []byte) error {
 	x.App = nil
 	x.User = nil
@@ -92,6 +93,7 @@ func (x ApprovalSubject) MarshalJSON() ([]byte, error) {
 	obj.Account = x.Account
 	return json.Marshal(obj)
 }
+
 func (x *ApprovalSubject) UnmarshalJSON(data []byte) error {
 	x.Group = nil
 	x.Sobject = nil
@@ -153,6 +155,7 @@ func (x Reviewer) MarshalJSON() ([]byte, error) {
 	m["requires_2fa"] = &x.Requires2fa
 	return json.Marshal(&m)
 }
+
 func (x *Reviewer) UnmarshalJSON(data []byte) error {
 	if err := json.Unmarshal(data, &x.Entity); err != nil {
 		return err

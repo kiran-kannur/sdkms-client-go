@@ -62,6 +62,7 @@ func (x SubscriptionType) MarshalJSON() ([]byte, error) {
 	obj.Reseller = x.Reseller
 	return json.Marshal(obj)
 }
+
 func (x *SubscriptionType) UnmarshalJSON(data []byte) error {
 	x.Trial = nil
 	x.Standard = nil
@@ -180,6 +181,7 @@ func (x LdapDnResolution) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(m)
 }
+
 func (x *LdapDnResolution) UnmarshalJSON(data []byte) error {
 	x.Construct = nil
 	x.SearchByMail = nil
@@ -262,6 +264,7 @@ func (x CaConfig) MarshalJSON() ([]byte, error) {
 	obj.Pinned = x.Pinned
 	return json.Marshal(obj)
 }
+
 func (x *CaConfig) UnmarshalJSON(data []byte) error {
 	x.CaSet = nil
 	x.Pinned = nil
@@ -318,6 +321,7 @@ func (x TlsConfig) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(m)
 }
+
 func (x *TlsConfig) UnmarshalJSON(data []byte) error {
 	x.Disabled = nil
 	x.Opportunistic = nil
@@ -527,6 +531,7 @@ func (x LoggingConfig) MarshalJSON() ([]byte, error) {
 	obj.Syslog = x.Syslog
 	return json.Marshal(obj)
 }
+
 func (x *LoggingConfig) UnmarshalJSON(data []byte) error {
 	x.Splunk = nil
 	x.Stackdriver = nil
@@ -565,6 +570,7 @@ func (x LoggingConfigRequest) MarshalJSON() ([]byte, error) {
 	obj.Syslog = x.Syslog
 	return json.Marshal(obj)
 }
+
 func (x *LoggingConfigRequest) UnmarshalJSON(data []byte) error {
 	x.Splunk = nil
 	x.Stackdriver = nil

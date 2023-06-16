@@ -150,6 +150,7 @@ func (x AppOauthConfig) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(m)
 }
+
 func (x *AppOauthConfig) UnmarshalJSON(data []byte) error {
 	x.Enabled = nil
 	x.Disabled = nil
@@ -239,6 +240,7 @@ func (x AppCredential) MarshalJSON() ([]byte, error) {
 	obj.SignedJwt = x.SignedJwt
 	return json.Marshal(obj)
 }
+
 func (x *AppCredential) UnmarshalJSON(data []byte) error {
 	x.Secret = nil
 	x.Certificate = nil

@@ -202,6 +202,7 @@ func (x Principal) MarshalJSON() ([]byte, error) {
 	obj.UserViaApp = x.UserViaApp
 	return json.Marshal(obj)
 }
+
 func (x *Principal) UnmarshalJSON(data []byte) error {
 	x.App = nil
 	x.User = nil
@@ -324,6 +325,7 @@ func (x JwtSigningKeys) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(m)
 }
+
 func (x *JwtSigningKeys) UnmarshalJSON(data []byte) error {
 	x.Stored = nil
 	x.Fetched = nil
@@ -378,6 +380,7 @@ func (x RsaEncryptionPaddingPolicy) MarshalJSON() ([]byte, error) {
 	obj.Pkcs1V15 = x.Pkcs1V15
 	return json.Marshal(obj)
 }
+
 func (x *RsaEncryptionPaddingPolicy) UnmarshalJSON(data []byte) error {
 	x.Oaep = nil
 	x.Pkcs1V15 = nil
@@ -419,6 +422,7 @@ func (x RsaSignaturePaddingPolicy) MarshalJSON() ([]byte, error) {
 	obj.Pkcs1V15 = x.Pkcs1V15
 	return json.Marshal(obj)
 }
+
 func (x *RsaSignaturePaddingPolicy) UnmarshalJSON(data []byte) error {
 	x.Pss = nil
 	x.Pkcs1V15 = nil
@@ -452,6 +456,7 @@ func (x MgfPolicy) MarshalJSON() ([]byte, error) {
 	obj.Mgf1 = x.Mgf1
 	return json.Marshal(obj)
 }
+
 func (x *MgfPolicy) UnmarshalJSON(data []byte) error {
 	x.Mgf1 = nil
 	var obj struct {
@@ -538,6 +543,7 @@ func (x ApprovalPolicyQuorum) MarshalJSON() ([]byte, error) {
 	m["members"] = &x.Members
 	return json.Marshal(&m)
 }
+
 func (x *ApprovalPolicyQuorum) UnmarshalJSON(data []byte) error {
 	if err := json.Unmarshal(data, &x.Config); err != nil {
 		return err
@@ -613,6 +619,7 @@ func (x PublishPublicKeyConfig) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(m)
 }
+
 func (x *PublishPublicKeyConfig) UnmarshalJSON(data []byte) error {
 	x.Enabled = nil
 	x.Disabled = nil
@@ -732,6 +739,7 @@ func (x Mgf) MarshalJSON() ([]byte, error) {
 	obj.Mgf1 = x.Mgf1
 	return json.Marshal(obj)
 }
+
 func (x *Mgf) UnmarshalJSON(data []byte) error {
 	x.Mgf1 = nil
 	var obj struct {
@@ -758,6 +766,7 @@ func (x SignatureMode) MarshalJSON() ([]byte, error) {
 	}
 	panic("unreachable")
 }
+
 func (x *SignatureMode) UnmarshalJSON(data []byte) error {
 	x.Rsa = nil
 	var rsa RsaSignaturePadding
@@ -794,6 +803,7 @@ func (x RsaSignaturePadding) MarshalJSON() ([]byte, error) {
 	obj.Pkcs1V15 = x.Pkcs1V15
 	return json.Marshal(obj)
 }
+
 func (x *RsaSignaturePadding) UnmarshalJSON(data []byte) error {
 	x.Pss = nil
 	x.Pkcs1V15 = nil
@@ -830,6 +840,7 @@ func (x SobjectDescriptor) MarshalJSON() ([]byte, error) {
 	obj.TransientKey = x.TransientKey
 	return json.Marshal(obj)
 }
+
 func (x *SobjectDescriptor) UnmarshalJSON(data []byte) error {
 	x.Kid = nil
 	x.Name = nil

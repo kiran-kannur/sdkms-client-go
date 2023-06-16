@@ -38,8 +38,7 @@ type Config2faAuthRequest struct {
 	Password string `json:"password"`
 }
 
-type Config2faAuthResponse struct {
-}
+type Config2faAuthResponse struct{}
 
 // Request to authenticate using U2F recovery code.
 type RecoveryCodeAuthRequest struct {

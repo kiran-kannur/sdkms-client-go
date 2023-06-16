@@ -8,7 +8,6 @@ import (
 )
 
 func sample_encrypt_decrypt(client *sdkms.Client, objId string) {
-
 	ctx := context.Background()
 	var plainText string = "Hello World!"
 	var key sdkms.SobjectDescriptor
@@ -43,5 +42,4 @@ func sample_encrypt_decrypt(client *sdkms.Client, objId string) {
 		return
 	}
 	log.Printf("Plain text after decryption %v", string(decryptResp.Plain))
-
 }

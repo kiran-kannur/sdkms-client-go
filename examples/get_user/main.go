@@ -57,7 +57,7 @@ func main() {
 }
 
 func accountRoleToString(role sdkms.UserAccountFlags) string {
-	var s = "Unknown"
+	s := "Unknown"
 	if role&sdkms.UserAccountFlagsAccountadministrator == sdkms.UserAccountFlagsAccountadministrator {
 		s = "Administrator"
 	}

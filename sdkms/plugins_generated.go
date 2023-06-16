@@ -60,6 +60,7 @@ func (x PluginSourceRequest) MarshalJSON() ([]byte, error) {
 	}
 	panic("unreachable")
 }
+
 func (x *PluginSourceRequest) UnmarshalJSON(data []byte) error {
 	x.FromRepo = nil
 	x.Inline = nil
@@ -105,6 +106,7 @@ func (x PluginSource) MarshalJSON() ([]byte, error) {
 	}
 	panic("unreachable")
 }
+
 func (x *PluginSource) UnmarshalJSON(data []byte) error {
 	x.FromRepo = nil
 	x.Inline = nil

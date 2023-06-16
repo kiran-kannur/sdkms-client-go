@@ -250,8 +250,8 @@ func (x *DeriveKeyMechanism) MarshalJSON() ([]byte, error) {
 		obj.Hkdf = x.Hkdf
 	}
 	return json.Marshal(obj)
-
 }
+
 func (x *DeriveKeyMechanism) UnmarshalJSON(data []byte) error {
 	x.EncryptData = nil
 	x.Hkdf = nil
@@ -357,6 +357,7 @@ func (x CryptMode) MarshalJSON() ([]byte, error) {
 	}
 	panic("unreachable")
 }
+
 func (x *CryptMode) UnmarshalJSON(data []byte) error {
 	x.Symmetric = nil
 	x.Rsa = nil
@@ -401,6 +402,7 @@ func (x RsaEncryptionPadding) MarshalJSON() ([]byte, error) {
 	obj.Pkcs1V15 = x.Pkcs1V15
 	return json.Marshal(obj)
 }
+
 func (x *RsaEncryptionPadding) UnmarshalJSON(data []byte) error {
 	x.Oaep = nil
 	x.Pkcs1V15 = nil
